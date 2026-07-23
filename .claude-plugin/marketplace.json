@@ -1,0 +1,17 @@
+{
+  "name": "lyra-forge",
+  "owner": { "name": "Lyra Forge", "url": "https://github.com/lyra-forge" },
+  "description": "Lyra Forge Claude Code plugins.",
+  "plugins": [
+    {
+      "name": "claude-bingo",
+      "displayName": "Claude Bingo",
+      "description": "Generate a bingo board of LLM verbal tics and score it against your local Claude Code transcripts.",
+      "source": { "source": "git", "url": "https://github.com/lavallee/claude-bingo.git" },
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "fun",
+      "keywords": ["fun", "analysis", "transcripts"]
+    }
+  ]
+}
