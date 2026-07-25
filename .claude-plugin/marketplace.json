@@ -22,6 +22,26 @@
         "analysis",
         "transcripts"
       ]
+    },
+    {
+      "name": "flip-notebook",
+      "displayName": "flip \u2014 reporter's notebooks",
+      "description": "Teaches your agent custody, grading, and corroboration discipline for research: you direct the work in conversation, flip keeps the durable, auditable notebook. Six skills covering the notebook lifecycle.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/flip.git"
+      },
+      "version": "0.11.1",
+      "license": "MIT",
+      "category": "research",
+      "keywords": [
+        "research",
+        "notebooks",
+        "provenance",
+        "sources",
+        "claims",
+        "okf"
+      ]
     }
   ]
 }
