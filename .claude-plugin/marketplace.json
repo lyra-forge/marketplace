@@ -7,6 +7,26 @@
   "description": "Lyra Forge Claude Code plugins.",
   "plugins": [
     {
+      "name": "flip-notebook",
+      "displayName": "flip — reporter's notebooks",
+      "description": "Teaches your agent custody, grading, and corroboration discipline for research: you direct the work in conversation, flip keeps the durable, auditable notebook. Seven skills covering the notebook lifecycle.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/flip.git"
+      },
+      "version": "0.16.0",
+      "license": "MIT",
+      "category": "research",
+      "keywords": [
+        "research",
+        "notebooks",
+        "provenance",
+        "sources",
+        "claims",
+        "okf"
+      ]
+    },
+    {
       "name": "claude-bingo",
       "displayName": "Claude Bingo",
       "description": "Generate a bingo board of LLM verbal tics and score it against your local Claude Code transcripts.",
@@ -21,26 +41,6 @@
         "fun",
         "analysis",
         "transcripts"
-      ]
-    },
-    {
-      "name": "flip-notebook",
-      "displayName": "flip \u2014 reporter's notebooks",
-      "description": "Teaches your agent custody, grading, and corroboration discipline for research: you direct the work in conversation, flip keeps the durable, auditable notebook. Six skills covering the notebook lifecycle.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/lavallee/flip.git"
-      },
-      "version": "0.15.0",
-      "license": "MIT",
-      "category": "research",
-      "keywords": [
-        "research",
-        "notebooks",
-        "provenance",
-        "sources",
-        "claims",
-        "okf"
       ]
     }
   ]

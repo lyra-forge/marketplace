@@ -7,7 +7,7 @@ then install anything from it.
 
 ```
 /plugin marketplace add lyra-forge/marketplace
-/plugin install claude-bingo@lyra-forge
+/plugin install flip-notebook@lyra-forge
 ```
 
 That's it — no SSH key, no environment variables, no git config. Plugins here
@@ -27,10 +27,33 @@ network access.
 
 ## Plugins
 
-| Plugin | What it does |
-|--------|--------------|
-| [claude-bingo](https://github.com/lavallee/claude-bingo) | A bingo board of LLM verbal tics, scored against your own Claude Code transcripts. |
-| [flip-notebook](https://github.com/lavallee/flip) | Custody, grading, and corroboration discipline for agent research — you direct the work, flip keeps the durable, auditable notebook. |
+### [flip-notebook](https://github.com/lavallee/flip) — 0.16.0
+
+Custody, grading, and corroboration discipline for agent research. You direct
+the work in conversation; flip keeps the durable, auditable notebook — sources
+captured to local bytes and hashed, sources graded, claims gated by a
+corroboration bar, every session logged. Seven skills cover the notebook
+lifecycle: create, source capture, session hygiene, claim audit, handoff,
+lessons, and kind authoring.
+
+A notebook is a plain directory of markdown pages with YAML frontmatter — an
+[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+bundle at rest, readable with `less`, diffable with `git`, editable as an
+Obsidian vault. No services, no proprietary dependencies. A wiki tells an agent
+what we know; a notebook can prove where it came from.
+
+The skills drive the `flip` CLI, which installs separately:
+`uv tool install flip-notebook` (or `pipx install flip-notebook`).
+
+### [claude-bingo](https://github.com/lavallee/claude-bingo) — 0.1.0
+
+```
+/plugin install claude-bingo@lyra-forge
+```
+
+A bingo board of LLM verbal tics, scored against your own Claude Code
+transcripts. A toy — and our canary for marketplace plumbing: if this one
+installs clean on a fresh machine, the install path is healthy.
 
 ## Adding a plugin to this marketplace
 
