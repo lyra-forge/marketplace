@@ -4,8 +4,26 @@
     "name": "Lyra Forge",
     "url": "https://github.com/lyra-forge"
   },
-  "description": "Lyra Forge Claude Code plugins.",
+  "description": "Lyra Forge agent plugins for Claude Code and Codex.",
   "plugins": [
+    {
+      "name": "spindle",
+      "displayName": "Spindle — agent-skill lifecycle",
+      "description": "Inspect, try, compose, verify, and maintain agent skills with exact custody and evidence. Includes the Spindle CLI source and a minimal harness operator.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/spindle.git",
+        "sha": "d290d6639c0a6fe62363185b2dad95e1da1d3b04"
+      },
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "agent-skills",
+        "lifecycle",
+        "provenance",
+        "claude-code"
+      ]
+    },
     {
       "name": "flip",
       "displayName": "flip — reporter's notebooks",

@@ -1,0 +1,21 @@
+{
+  "name": "lyra-forge",
+  "interface": {
+    "displayName": "Lyra Forge"
+  },
+  "plugins": [
+    {
+      "name": "spindle",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/spindle.git",
+        "sha": "d290d6639c0a6fe62363185b2dad95e1da1d3b04"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
