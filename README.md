@@ -7,7 +7,7 @@ then install anything from it.
 
 ```
 /plugin marketplace add lyra-forge/marketplace
-/plugin install flip-notebook@lyra-forge
+/plugin install flip@lyra-forge
 ```
 
 That's it — no SSH key, no environment variables, no git config. Plugins here
@@ -27,7 +27,7 @@ network access.
 
 ## Plugins
 
-### [flip-notebook](https://github.com/lavallee/flip) — 0.16.0
+### [flip](https://github.com/lavallee/flip) — 0.16.1
 
 Custody, grading, and corroboration discipline for agent research. You direct
 the work in conversation; flip keeps the durable, auditable notebook — sources
@@ -42,8 +42,12 @@ bundle at rest, readable with `less`, diffable with `git`, editable as an
 Obsidian vault. No services, no proprietary dependencies. A wiki tells an agent
 what we know; a notebook can prove where it came from.
 
-The skills drive the `flip` CLI, which installs separately:
-`uv tool install flip-notebook` (or `pipx install flip-notebook`).
+The skills drive the `flip` CLI, which installs separately — the PyPI package
+is `flip-notebook`:
+
+```bash
+uv tool install flip-notebook      # or: pipx install flip-notebook
+```
 
 ### [claude-bingo](https://github.com/lavallee/claude-bingo) — 0.1.0
 

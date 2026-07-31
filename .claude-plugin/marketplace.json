@@ -7,14 +7,14 @@
   "description": "Lyra Forge Claude Code plugins.",
   "plugins": [
     {
-      "name": "flip-notebook",
+      "name": "flip",
       "displayName": "flip — reporter's notebooks",
       "description": "Teaches your agent custody, grading, and corroboration discipline for research: you direct the work in conversation, flip keeps the durable, auditable notebook. Seven skills covering the notebook lifecycle.",
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/flip.git"
       },
-      "version": "0.16.0",
+      "version": "0.16.1",
       "license": "MIT",
       "category": "research",
       "keywords": [
