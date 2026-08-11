@@ -32,7 +32,6 @@
         "source": "url",
         "url": "https://github.com/lavallee/flip.git"
       },
-      "version": "0.16.1",
       "license": "MIT",
       "category": "research",
       "keywords": [
@@ -52,7 +51,6 @@
         "source": "url",
         "url": "https://github.com/lavallee/vizier.git"
       },
-      "version": "0.2.0",
       "license": "MIT",
       "category": "productivity",
       "keywords": [
@@ -62,6 +60,25 @@
         "journalism",
         "critique",
         "accessibility"
+      ]
+    },
+    {
+      "name": "ergo",
+      "displayName": "ergo — dataset pitfalls, written down",
+      "description": "Teaches your agent to look for what is already known about a dataset before touching it, to record what it learns in a checkable format, and to offer the public-safe part back. Two skills: working with data pages, and recovering one from code that already parses the data.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/ergo.git"
+      },
+      "license": "MIT",
+      "category": "research",
+      "keywords": [
+        "data",
+        "datasets",
+        "documentation",
+        "data-journalism",
+        "open-data",
+        "provenance"
       ]
     },
     {

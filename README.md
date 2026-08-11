@@ -49,7 +49,7 @@ network access; the Codex catalog uses the same HTTPS source convention.
 
 ## Plugins
 
-### [spindle](https://github.com/lavallee/spindle) — 0.2.0
+### [spindle](https://github.com/lavallee/spindle)
 
 ```text
 # Claude Code
@@ -68,7 +68,11 @@ The plugin contains a small operator plus a deterministic launcher for the exact
 pinned Spindle source. It requires Python 3.11 or newer, but no separate Python
 package installation.
 
-### [flip](https://github.com/lavallee/flip) — 0.16.1
+### [flip](https://github.com/lavallee/flip)
+
+```
+/plugin install flip@lyra-forge
+```
 
 Custody, grading, and corroboration discipline for agent research. You direct
 the work in conversation; flip keeps the durable, auditable notebook — sources
@@ -90,7 +94,7 @@ is `flip-notebook`:
 uv tool install flip-notebook      # or: pipx install flip-notebook
 ```
 
-### [vizier](https://github.com/lavallee/vizier) — 0.2.0
+### [vizier](https://github.com/lavallee/vizier)
 
 ```
 /plugin install vizier@lyra-forge
@@ -117,7 +121,40 @@ colorblind-safe palettes all work offline. Corpus-backed LLM critique is an
 opt-in extra. If `uvx` is on PATH, the MCP server runs without the separate
 install; `vizier doctor` reports what's live.
 
-### [claude-bingo](https://github.com/lavallee/claude-bingo) — 0.1.0
+### [ergo](https://github.com/lavallee/ergo)
+
+```
+/plugin install ergo@lyra-forge
+```
+
+Dataset pitfalls, written down. Every dataset has quirks, mislabelings and
+decisions that will bite you, and publishers usually document them — somewhere
+the download never points to. ergo teaches your agent to go looking before it
+touches the data, to record what it learns as a checkable page, and to offer
+the public-safe part back so the next person does not pay for the same lesson.
+
+Two skills. The first covers working with data pages: read the known issues
+before writing a loader, honour the ones that constrain what may honestly be
+said, and register new ones at the moment of discovery. The second recovers a
+page from code that already parses the data — tests and fixtures and NEWS files
+first, the parser sixth, because that is where the reasons are.
+
+A data page is one markdown file per dataset carrying TOML blocks: a manifest,
+a registry of issues each scoped to the years and columns it touches, the
+practices that say what may be computed, and the publisher's own words quoted
+with a date. Plain files, no services.
+
+The skills drive the `ergo` validator, which is a single dependency-free file
+you copy into your repository rather than install:
+
+```bash
+curl -sSLo tools/ergo.py https://raw.githubusercontent.com/lavallee/ergo/main/tools/ergo.py
+```
+
+[The background](https://lavallee.github.io/ergo/review/) — what the benchmark
+record shows about models doing data work, and why this is worth writing down.
+
+### [claude-bingo](https://github.com/lavallee/claude-bingo)
 
 ```
 /plugin install claude-bingo@lyra-forge
@@ -149,7 +186,8 @@ To list a Claude Code plugin, add a `plugins[]` entry:
 ```
 
 If the plugin manifest owns an explicit version, omit the duplicate marketplace
-version. Pin released remote sources with a full `sha` so an install resolves to
+version — a number in both places drifts, and the manifest is the one an install
+actually resolves. Pin released remote sources with a full `sha` so an install resolves to
 the bytes that were validated.
 
 Always use the `url` source with a full `https://…git` URL — **not** the
