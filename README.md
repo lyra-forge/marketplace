@@ -190,6 +190,12 @@ version — a number in both places drifts, and the manifest is the one an insta
 actually resolves. Pin released remote sources with a full `sha` so an install resolves to
 the bytes that were validated.
 
+Pinning is per-plugin, not a house rule: `spindle` and `ergo` pin, `flip` and
+`vizier` track their default branch. Pin when an install should resolve to bytes
+that were validated; leave it unpinned when the plugin should follow upstream.
+A pin must point at a commit that actually contains `.claude-plugin/plugin.json`
+— a release tag cut before the plugin manifest existed will install nothing.
+
 Always use the `url` source with a full `https://…git` URL — **not** the
 `github`/`owner-repo` shorthand. The shorthand clones over SSH and breaks
 installs for anyone without a GitHub SSH key; the `url` source clones the

@@ -68,7 +68,8 @@
       "description": "Teaches your agent to look for what is already known about a dataset before touching it, to record what it learns in a checkable format, and to offer the public-safe part back. Two skills: working with data pages, and recovering one from code that already parses the data.",
       "source": {
         "source": "url",
-        "url": "https://github.com/lavallee/ergo.git"
+        "url": "https://github.com/lavallee/ergo.git",
+        "sha": "51c3827665db2f8ebeef734a3215322a6677cf62"
       },
       "license": "MIT",
       "category": "research",
