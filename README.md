@@ -90,6 +90,33 @@ is `flip-notebook`:
 uv tool install flip-notebook      # or: pipx install flip-notebook
 ```
 
+### [vizier](https://github.com/lavallee/vizier) — 0.2.0
+
+```
+/plugin install vizier@lyra-forge
+```
+
+Chart judgment for agents. Most bad charts are a defensible-looking answer to
+a question nobody asked — decided before the first line of plotting code runs.
+vizier moves that decision onto a documented library: two skills that pick the
+chart form from the reader's question, run the honesty checks a graphics desk
+would apply (fair comparison, denominator, counter-reading), and critique a
+finished chart against 43 documented forms and a corpus of critical writing.
+
+The plugin bundles vizier's MCP server, so the same answers are available as
+tools. It runs the `vizier` CLI, which installs separately — the PyPI package
+is `datavizier`:
+
+```bash
+uv tool install datavizier      # or: pip install datavizier
+```
+
+The core needs no keys and no network: form recommendation, the journalism
+checks, the pattern library, structural analysis of a rendered chart, and
+colorblind-safe palettes all work offline. Corpus-backed LLM critique is an
+opt-in extra. If `uvx` is on PATH, the MCP server runs without the separate
+install; `vizier doctor` reports what's live.
+
 ### [claude-bingo](https://github.com/lavallee/claude-bingo) — 0.1.0
 
 ```

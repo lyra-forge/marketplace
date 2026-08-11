@@ -45,6 +45,26 @@
       ]
     },
     {
+      "name": "vizier",
+      "displayName": "vizier — chart judgment",
+      "description": "Steers agents toward good data visualization: pick the chart form from the reader's question rather than from habit, answer the honesty checks a newsroom would ask, and critique a finished chart against 43 documented forms and a corpus of critical writing.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/vizier.git"
+      },
+      "version": "0.2.0",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "dataviz",
+        "charts",
+        "data-visualization",
+        "journalism",
+        "critique",
+        "accessibility"
+      ]
+    },
+    {
       "name": "claude-bingo",
       "displayName": "Claude Bingo",
       "description": "Generate a bingo board of LLM verbal tics and score it against your local Claude Code transcripts.",
