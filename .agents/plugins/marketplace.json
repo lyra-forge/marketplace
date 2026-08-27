@@ -16,6 +16,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "claude-bingo",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/claude-bingo.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Other"
     }
   ]
 }

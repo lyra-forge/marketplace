@@ -90,7 +90,6 @@
         "source": "url",
         "url": "https://github.com/lavallee/claude-bingo.git"
       },
-      "version": "0.1.0",
       "license": "MIT",
       "category": "fun",
       "keywords": [

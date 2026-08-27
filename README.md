@@ -156,13 +156,24 @@ record shows about models doing data work, and why this is worth writing down.
 
 ### [claude-bingo](https://github.com/lavallee/claude-bingo)
 
-```
+```text
+# Claude Code
 /plugin install claude-bingo@lyra-forge
+
+# Codex
+codex plugin add claude-bingo@lyra-forge
 ```
 
 A bingo board of LLM verbal tics, scored against your own Claude Code
 transcripts. A toy — and our canary for marketplace plumbing: if this one
-installs clean on a fresh machine, the install path is healthy.
+installs clean on a fresh machine, the install path is healthy. It is the
+smallest plugin here that exercises both catalogs, so it is the cheapest
+thing to install when you suspect the plumbing rather than the plugin.
+
+Pure standard library, no separate install — it runs from the plugin
+directory on whatever `python3` you have, provided that is 3.11 or newer.
+The Codex plugin reads the *Claude Code* transcripts on the same machine,
+which is the joke.
 
 ## Adding a plugin to this marketplace
 
