@@ -70,8 +70,12 @@ package installation.
 
 ### [flip](https://github.com/lavallee/flip)
 
-```
+```text
+# Claude Code
 /plugin install flip@lyra-forge
+
+# Codex
+codex plugin add flip@lyra-forge
 ```
 
 Custody, grading, and corroboration discipline for agent research. You direct
@@ -91,8 +95,12 @@ The skills drive the `flip` CLI, which installs separately — the PyPI package
 is `flip-notebook`:
 
 ```bash
-uv tool install flip-notebook      # or: pipx install flip-notebook
+uv tool install --python 3.12 flip-notebook
 ```
+
+If the command is not immediately on PATH, run `uv tool update-shell` and open
+a new shell. The plugin's creation skill performs this preflight before the
+first notebook write.
 
 ### [vizier](https://github.com/lavallee/vizier)
 

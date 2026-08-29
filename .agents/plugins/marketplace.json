@@ -18,6 +18,18 @@
       "category": "Developer Tools"
     },
     {
+      "name": "flip",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/flip.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    },
+    {
       "name": "claude-bingo",
       "source": {
         "source": "url",
