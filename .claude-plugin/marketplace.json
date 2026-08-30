@@ -97,6 +97,25 @@
         "analysis",
         "transcripts"
       ]
+    },
+    {
+      "name": "yoinker",
+      "displayName": "Yoinker — understand it, yoink what transfers",
+      "description": "Explains unfamiliar tools and ideas, checks their mechanisms against a real situation, and returns evidence-linked borrow, try, track, or reject decisions without turning recommendation into permission.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/yoinker.git",
+        "sha": "52aa055f3545504458d7295feb4d40e81cef5b84"
+      },
+      "license": "MIT",
+      "category": "research",
+      "keywords": [
+        "research",
+        "evidence",
+        "adoption",
+        "technology",
+        "analysis"
+      ]
     }
   ]
 }

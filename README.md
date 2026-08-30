@@ -183,6 +183,26 @@ directory on whatever `python3` you have, provided that is 3.11 or newer.
 The Codex plugin reads the *Claude Code* transcripts on the same machine,
 which is the joke.
 
+### [yoinker](https://github.com/lavallee/yoinker)
+
+```text
+# Claude Code
+/plugin install yoinker@lyra-forge
+
+# Codex
+codex plugin add yoinker@lyra-forge
+```
+
+Understand how it works. Yoink what transfers. Give your agent a repository,
+paper, product, technique, or open question. Yoinker follows discovery links
+to original artifacts, separates observation from claims and inference, checks
+the mechanism against the situation you actually have, and returns a decision
+per mechanism: borrow, try, track, or reject.
+
+One skill, no service, no package dependency, and no automatic implementation.
+A recommendation remains evidence-linked advice rather than permission to
+install, merge, publish, or change production.
+
 ## Adding a plugin to this marketplace
 
 Each entry in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json)

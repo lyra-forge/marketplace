@@ -40,6 +40,19 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Other"
+    },
+    {
+      "name": "yoinker",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/yoinker.git",
+        "sha": "52aa055f3545504458d7295feb4d40e81cef5b84"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
     }
   ]
 }
