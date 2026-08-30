@@ -30,6 +30,31 @@
       "category": "Research"
     },
     {
+      "name": "vizier",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/vizier.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "ergo",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/ergo.git",
+        "sha": "1d379439f3f18bd53eb8304ada6f6ab59d49cafe"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    },
+    {
       "name": "claude-bingo",
       "source": {
         "source": "url",

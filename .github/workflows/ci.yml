@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m json.tool .claude-plugin/marketplace.json >/dev/null
+      - run: python -m json.tool .agents/plugins/marketplace.json >/dev/null
+      - run: python -m unittest discover tests

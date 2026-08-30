@@ -8,22 +8,54 @@ then install a compatible plugin from inside your harness or its CLI.
 ```
 /plugin marketplace add lyra-forge/marketplace
 /plugin install spindle@lyra-forge
+/plugin install flip@lyra-forge
+/plugin install vizier@lyra-forge
+/plugin install ergo@lyra-forge
+/plugin install claude-bingo@lyra-forge
+/plugin install yoinker@lyra-forge
 ```
 
-Start a new session, then invoke the installed plugin as
-`/spindle:spindle`. Once it sets up the project-local operator, a subsequent
-session can use the shorter `/spindle`.
+Install only the plugins you want, then start a new session. Bundled skills use
+`/plugin:skill` names: for example, `/spindle:spindle`,
+`/flip:notebook-create`, `/vizier:chart-design`, `/ergo:ergo`, and
+`/claude-bingo:bingo`. Yoinker is `/yoinker:yoinker`. Once Spindle sets up its
+project-local operator, a subsequent session can use the shorter `/spindle`.
 
 ## Install in Codex
 
 ```bash
 codex plugin marketplace add lyra-forge/marketplace
 codex plugin add spindle@lyra-forge
+codex plugin add flip@lyra-forge
+codex plugin add vizier@lyra-forge
+codex plugin add ergo@lyra-forge
+codex plugin add claude-bingo@lyra-forge
+codex plugin add yoinker@lyra-forge
 ```
 
-Start a new Codex session, then invoke the installed plugin as
-`$spindle:spindle`. Once it sets up the project-local operator, a subsequent
-session can use the shorter `$spindle`.
+Install only the plugins you want, then start a new Codex session. Bundled
+skills use `$plugin:skill` names: for example, `$spindle:spindle`,
+`$flip:notebook-create`, `$vizier:chart-design`, `$ergo:ergo`, and
+`$claude-bingo:bingo`. Yoinker is `$yoinker:yoinker`. Once Spindle sets up its
+project-local operator, a subsequent session can use the shorter `$spindle`.
+
+## Update an installed plugin
+
+Refresh the marketplace, update or reinstall the selected plugin, and start a
+new session so the harness loads the new components:
+
+```text
+# Claude Code
+/plugin marketplace update lyra-forge
+/plugin update vizier@lyra-forge
+
+# Codex
+codex plugin marketplace upgrade lyra-forge
+codex plugin add vizier@lyra-forge
+```
+
+Codex currently uses `plugin add` for both initial installation and reinstall;
+it has no separate `plugin update` command.
 
 The model is the same in both harnesses: add a catalog, install an entry, and
 start a fresh session. The protocols are not identical. Claude Code reads
@@ -85,6 +117,10 @@ corroboration bar, every session logged. Seven skills cover the notebook
 lifecycle: create, source capture, session hygiene, claim audit, handoff,
 lessons, and kind authoring.
 
+Both harnesses install the same seven skills. Claude Code also runs Flip's
+custody hook around web fetches; Codex's hosted web tools do not expose those
+tool-hook events, so the skills carry the capture-before-cite discipline there.
+
 A notebook is a plain directory of markdown pages with YAML frontmatter — an
 [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
 bundle at rest, readable with `less`, diffable with `git`, editable as an
@@ -95,17 +131,17 @@ The skills drive the `flip` CLI, which installs separately — the PyPI package
 is `flip-notebook`:
 
 ```bash
-uv tool install --python 3.12 flip-notebook
+uv tool install flip-notebook      # or: pipx install flip-notebook
 ```
-
-If the command is not immediately on PATH, run `uv tool update-shell` and open
-a new shell. The plugin's creation skill performs this preflight before the
-first notebook write.
 
 ### [vizier](https://github.com/lavallee/vizier)
 
-```
+```text
+# Claude Code
 /plugin install vizier@lyra-forge
+
+# Codex
+codex plugin add vizier@lyra-forge
 ```
 
 Chart judgment for agents. Most bad charts are a defensible-looking answer to
@@ -131,8 +167,12 @@ install; `vizier doctor` reports what's live.
 
 ### [ergo](https://github.com/lavallee/ergo)
 
-```
+```text
+# Claude Code
 /plugin install ergo@lyra-forge
+
+# Codex
+codex plugin add ergo@lyra-forge
 ```
 
 Dataset pitfalls, written down. Every dataset has quirks, mislabelings and
@@ -141,11 +181,11 @@ the download never points to. ergo teaches your agent to go looking before it
 touches the data, to record what it learns as a checkable page, and to offer
 the public-safe part back so the next person does not pay for the same lesson.
 
-Two skills. The first covers working with data pages: read the known issues
-before writing a loader, honour the ones that constrain what may honestly be
-said, and register new ones at the moment of discovery. The second recovers a
-page from code that already parses the data — tests and fixtures and NEWS files
-first, the parser sixth, because that is where the reasons are.
+One skill covers two roles. It works with data pages — reading known issues
+before writing a loader, honouring the ones that constrain what may honestly be
+said, and registering new ones at discovery — and recovers a page from code
+that already parses the data, starting with tests, fixtures, and NEWS files
+before reaching for the parser.
 
 A data page is one markdown file per dataset carrying TOML blocks: a manifest,
 a registry of issues each scoped to the years and columns it touches, the
@@ -174,14 +214,8 @@ codex plugin add claude-bingo@lyra-forge
 
 A bingo board of LLM verbal tics, scored against your own Claude Code
 transcripts. A toy — and our canary for marketplace plumbing: if this one
-installs clean on a fresh machine, the install path is healthy. It is the
-smallest plugin here that exercises both catalogs, so it is the cheapest
-thing to install when you suspect the plumbing rather than the plugin.
-
-Pure standard library, no separate install — it runs from the plugin
-directory on whatever `python3` you have, provided that is 3.11 or newer.
-The Codex plugin reads the *Claude Code* transcripts on the same machine,
-which is the joke.
+installs clean on a fresh machine in either harness, the install path is
+healthy. From Codex it still reads the local Claude Code transcript history.
 
 ### [yoinker](https://github.com/lavallee/yoinker)
 
@@ -208,8 +242,17 @@ install, merge, publish, or change production.
 Each entry in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json)
 points at a Claude Code plugin repository. Codex-compatible entries also need an
 entry in [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json).
-The two catalogs may expose different subsets; do not claim cross-harness support
+The two catalogs expose the same plugin set. Do not list a plugin in both
 unless the source repository ships and tests both manifests.
+
+The source repository owns the plugin. Before adding it here, it must contain:
+
+- `.claude-plugin/plugin.json` for Claude Code;
+- `.codex-plugin/plugin.json` for Codex;
+- the shared `skills/` tree and any declared `.mcp.json`, hooks, scripts, or
+  assets;
+- tests that keep both manifest versions aligned and exercise any bundled
+  launcher or MCP server.
 
 To list a Claude Code plugin, add a `plugins[]` entry:
 
@@ -224,27 +267,64 @@ To list a Claude Code plugin, add a `plugins[]` entry:
 }
 ```
 
-If the plugin manifest owns an explicit version, omit the duplicate marketplace
-version — a number in both places drifts, and the manifest is the one an install
-actually resolves. Pin released remote sources with a full `sha` so an install resolves to
-the bytes that were validated.
+To list the same plugin in Codex, add the corresponding entry to
+`.agents/plugins/marketplace.json` using the same remote source and selector:
 
-Pinning is per-plugin, not a house rule: `spindle` and `ergo` pin, `flip` and
-`vizier` track their default branch. Pin when an install should resolve to bytes
-that were validated; leave it unpinned when the plugin should follow upstream.
-A pin must point at a commit that actually contains `.claude-plugin/plugin.json`
-— a release tag cut before the plugin manifest existed will install nothing.
+```json
+{
+  "name": "your-plugin",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/owner/your-plugin.git"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Productivity"
+}
+```
+
+Keep the Claude and Codex manifest versions equal. Omit a duplicate marketplace
+version — numbers in three places drift, and the source manifest is what an
+install actually resolves. Pin released remote sources with a full `sha` when
+an install should resolve to the exact bytes that were validated.
+
+Pinning is per plugin, not a house rule. Unless a documented compatibility
+reason requires otherwise, pin both catalogs to the same commit or leave both
+tracking upstream. A pin must point at a commit containing the manifest for the
+harness that will install it; a release cut before `.codex-plugin/plugin.json`
+existed is not a Codex release.
+
+During a first Codex migration, the local Codex entry may temporarily remain
+unpinned because no published commit contains its manifest yet. Do not publish
+that intermediate catalog. Publish the source repository, then align both
+catalog selectors to the intended dual-harness release before publishing this
+repository.
 
 Always use the `url` source with a full `https://…git` URL — **not** the
-`github`/`owner-repo` shorthand. The shorthand clones over SSH and breaks
-installs for anyone without a GitHub SSH key; the `url` source clones the
-literal HTTPS URL for everyone. Validate before committing:
+`github`/`owner-repo` shorthand. The shorthand clones over SSH in Claude Code
+and breaks installs for anyone without a GitHub SSH key; the `url` source
+clones the literal HTTPS URL for everyone.
+
+Publish the source repository before the marketplace commit. A local manifest
+passing validation is not enough: the remote branch or pinned commit must
+already contain every file the catalog declares. Then validate the catalogs:
 
 ```bash
 claude plugin validate . --strict
+python3 -m unittest discover tests
 ```
 
-For Codex, add the marketplace locally, confirm the plugin is available, install
-it, and test it in a new session. A Codex entry must include installation and
-authentication policy plus a category; the plugin itself must contain
-`.codex-plugin/plugin.json`.
+For Codex, test a temporary copy of the marketplace with a unique top-level
+`name`: add it with `codex plugin marketplace add <temporary-root>`, confirm the
+entry with `codex plugin list`, install it with
+`codex plugin add <plugin>@<temporary-name>`, and start a new session. Remove
+the temporary install and marketplace afterward.
+
+A Codex entry must include installation and authentication policy plus a
+category. If the plugin bundles an MCP server, declare the root `.mcp.json`
+through `mcpServers`; if it uses `hooks/hooks.json`, test the hook separately
+because Codex and Claude Code do not expose identical tool events. Report
+catalog discovery, installation, component activation, and a live model session
+as separate checks rather than treating one as proof of all four.
