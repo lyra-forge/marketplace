@@ -78,6 +78,19 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Research"
+    },
+    {
+      "name": "chip-contract",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/chip.git",
+        "sha": "61c0eea5c2d467a2a6a8153ea566e58c99e1c5da"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

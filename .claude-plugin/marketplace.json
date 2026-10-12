@@ -116,6 +116,27 @@
         "technology",
         "analysis"
       ]
+    },
+    {
+      "name": "chip-contract",
+      "displayName": "chip — move the code-vs-model boundary on evidence",
+      "description": "Teaches your agent the chip lifecycle and the socket beneath it: whether a behavior should be a chip at all, seating an existing function's code-or-model decision in a socket so every call is receipted and the escalation band is learned from labels, authoring and fixturing the package, installing it so it resolves, auditing silent failures, and closing the outcome loop. Eight skills.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/chip.git",
+        "sha": "61c0eea5c2d467a2a6a8153ea566e58c99e1c5da"
+      },
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "chips",
+        "sockets",
+        "receipts",
+        "distillation",
+        "llm",
+        "evaluation",
+        "claude-code"
+      ]
     }
   ]
 }

@@ -13,12 +13,13 @@ then install a compatible plugin from inside your harness or its CLI.
 /plugin install ergo@lyra-forge
 /plugin install claude-bingo@lyra-forge
 /plugin install yoinker@lyra-forge
+/plugin install chip-contract@lyra-forge
 ```
 
 Install only the plugins you want, then start a new session. Bundled skills use
 `/plugin:skill` names: for example, `/spindle:spindle`,
 `/flip:notebook-create`, `/vizier:chart-design`, `/ergo:ergo`, and
-`/claude-bingo:bingo`. Yoinker is `/yoinker:yoinker`. Once Spindle sets up its
+`/claude-bingo:bingo`. Yoinker is `/yoinker:yoinker`; chip is `/chip-contract:chip-socket` and `/chip-contract:chip-candidate`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `/spindle`.
 
 ## Install in Codex
@@ -31,12 +32,13 @@ codex plugin add vizier@lyra-forge
 codex plugin add ergo@lyra-forge
 codex plugin add claude-bingo@lyra-forge
 codex plugin add yoinker@lyra-forge
+codex plugin add chip-contract@lyra-forge
 ```
 
 Install only the plugins you want, then start a new Codex session. Bundled
 skills use `$plugin:skill` names: for example, `$spindle:spindle`,
 `$flip:notebook-create`, `$vizier:chart-design`, `$ergo:ergo`, and
-`$claude-bingo:bingo`. Yoinker is `$yoinker:yoinker`. Once Spindle sets up its
+`$claude-bingo:bingo`. Yoinker is `$yoinker:yoinker`; chip is `$chip-contract:chip-socket` and `$chip-contract:chip-candidate`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `$spindle`.
 
 ## Update an installed plugin
@@ -236,6 +238,29 @@ per mechanism: borrow, try, track, or reject.
 One skill, no service, no package dependency, and no automatic implementation.
 A recommendation remains evidence-linked advice rather than permission to
 install, merge, publish, or change production.
+
+### [chip-contract](https://github.com/lavallee/chip)
+
+```text
+# Claude Code
+/plugin install chip-contract@lyra-forge
+
+# Codex
+codex plugin add chip-contract@lyra-forge
+```
+
+Move the code-vs-model boundary on evidence. Eight skills over the chip
+contract: `chip-socket` seats a function's code-or-model decision in a socket
+(the `chipsocket` runner) so every call writes a receipt, shadows and a noise
+floor measure the alternatives on production traffic, and the escalation band
+is learned from labelled receipts rather than guessed. `chip-candidate`
+decides whether a behavior is a chip, a tool, a dialogic skill, or doctrine;
+the remaining six author, fixture, evaluate, install, audit, and close the
+outcome loop on a chip package.
+
+The skills ship inside the `chipspec` Python package too (`import chip`);
+the plugin is the same bytes. No service, no credentials; `chip` and
+`chipsocket` are CLIs over local packages and receipts.
 
 ## Adding a plugin to this marketplace
 
