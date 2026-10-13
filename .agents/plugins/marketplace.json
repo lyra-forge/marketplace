@@ -9,7 +9,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/spindle.git",
-        "sha": "d290d6639c0a6fe62363185b2dad95e1da1d3b04"
+        "sha": "fb13675dd7f1fac95eaa34e8441d5907677efa88"
       },
       "policy": {
         "installation": "AVAILABLE",
