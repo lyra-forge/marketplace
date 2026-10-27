@@ -14,12 +14,13 @@ then install a compatible plugin from inside your harness or its CLI.
 /plugin install llm-bingo@lyra-forge
 /plugin install yoinker@lyra-forge
 /plugin install chip-contract@lyra-forge
+/plugin install toucan@lyra-forge
 ```
 
 Install only the plugins you want, then start a new session. Bundled skills use
 `/plugin:skill` names: for example, `/spindle:spindle`,
 `/flip:notebook-create`, `/vizier:chart-design`, `/ergo:ergo`, and
-`/llm-bingo:bingo`. Yoinker is `/yoinker:yoinker`; chip is `/chip-contract:chip-socket` and `/chip-contract:chip-candidate`. Once Spindle sets up its
+`/llm-bingo:bingo`. Yoinker is `/yoinker:yoinker`; chip is `/chip-contract:chip-socket` and `/chip-contract:chip-candidate`; toucan is `/toucan:toucan`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `/spindle`.
 
 ## Install in Codex
@@ -33,12 +34,13 @@ codex plugin add ergo@lyra-forge
 codex plugin add llm-bingo@lyra-forge
 codex plugin add yoinker@lyra-forge
 codex plugin add chip-contract@lyra-forge
+codex plugin add toucan@lyra-forge
 ```
 
 Install only the plugins you want, then start a new Codex session. Bundled
 skills use `$plugin:skill` names: for example, `$spindle:spindle`,
 `$flip:notebook-create`, `$vizier:chart-design`, `$ergo:ergo`, and
-`$llm-bingo:bingo`. Yoinker is `$yoinker:yoinker`; chip is `$chip-contract:chip-socket` and `$chip-contract:chip-candidate`. Once Spindle sets up its
+`$llm-bingo:bingo`. Yoinker is `$yoinker:yoinker`; chip is `$chip-contract:chip-socket` and `$chip-contract:chip-candidate`; toucan is `$toucan:toucan`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `$spindle`.
 
 ## Update an installed plugin
@@ -265,6 +267,23 @@ outcome loop on a chip package.
 The skills ship inside the `chipspec` Python package too (`import chip`);
 the plugin is the same bytes. No service, no credentials; `chip` and
 `chipsocket` are CLIs over local packages and receipts.
+
+### [toucan](https://github.com/lavallee/toucan)
+
+```text
+# Claude Code
+/plugin install toucan@lyra-forge
+
+# Codex
+codex plugin add toucan@lyra-forge
+```
+
+A canvas you and your agents share. toucan runs a tldraw or Excalidraw canvas
+in your browser; the skill teaches your agent to drive it through the `toucan`
+CLI while you keep editing by hand: look before changing, upsert shapes by key,
+merge in a Mermaid sketch, and add canvas scripts for lasting behaviour. The
+skill needs toucan itself running — see the
+[quick start](https://lavallee.github.io/toucan/quickstart.html).
 
 ## Adding a plugin to this marketplace
 

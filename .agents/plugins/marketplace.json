@@ -91,6 +91,19 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "toucan",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/toucan.git",
+        "sha": "9d5e073775fb729bbbabd92d23e67787991a3c5e"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }
