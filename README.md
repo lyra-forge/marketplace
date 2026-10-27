@@ -11,7 +11,7 @@ then install a compatible plugin from inside your harness or its CLI.
 /plugin install flip@lyra-forge
 /plugin install vizier@lyra-forge
 /plugin install ergo@lyra-forge
-/plugin install claude-bingo@lyra-forge
+/plugin install llm-bingo@lyra-forge
 /plugin install yoinker@lyra-forge
 /plugin install chip-contract@lyra-forge
 ```
@@ -19,7 +19,7 @@ then install a compatible plugin from inside your harness or its CLI.
 Install only the plugins you want, then start a new session. Bundled skills use
 `/plugin:skill` names: for example, `/spindle:spindle`,
 `/flip:notebook-create`, `/vizier:chart-design`, `/ergo:ergo`, and
-`/claude-bingo:bingo`. Yoinker is `/yoinker:yoinker`; chip is `/chip-contract:chip-socket` and `/chip-contract:chip-candidate`. Once Spindle sets up its
+`/llm-bingo:bingo`. Yoinker is `/yoinker:yoinker`; chip is `/chip-contract:chip-socket` and `/chip-contract:chip-candidate`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `/spindle`.
 
 ## Install in Codex
@@ -30,7 +30,7 @@ codex plugin add spindle@lyra-forge
 codex plugin add flip@lyra-forge
 codex plugin add vizier@lyra-forge
 codex plugin add ergo@lyra-forge
-codex plugin add claude-bingo@lyra-forge
+codex plugin add llm-bingo@lyra-forge
 codex plugin add yoinker@lyra-forge
 codex plugin add chip-contract@lyra-forge
 ```
@@ -38,7 +38,7 @@ codex plugin add chip-contract@lyra-forge
 Install only the plugins you want, then start a new Codex session. Bundled
 skills use `$plugin:skill` names: for example, `$spindle:spindle`,
 `$flip:notebook-create`, `$vizier:chart-design`, `$ergo:ergo`, and
-`$claude-bingo:bingo`. Yoinker is `$yoinker:yoinker`; chip is `$chip-contract:chip-socket` and `$chip-contract:chip-candidate`. Once Spindle sets up its
+`$llm-bingo:bingo`. Yoinker is `$yoinker:yoinker`; chip is `$chip-contract:chip-socket` and `$chip-contract:chip-candidate`. Once Spindle sets up its
 project-local operator, a subsequent session can use the shorter `$spindle`.
 
 ## Update an installed plugin
@@ -204,20 +204,24 @@ curl -sSLo tools/ergo.py https://raw.githubusercontent.com/lavallee/ergo/main/to
 [The background](https://lavallee.github.io/ergo/review/) — what the benchmark
 record shows about models doing data work, and why this is worth writing down.
 
-### [claude-bingo](https://github.com/lavallee/claude-bingo)
+### [llm-bingo](https://github.com/lavallee/llm-bingo)
 
 ```text
 # Claude Code
-/plugin install claude-bingo@lyra-forge
+/plugin install llm-bingo@lyra-forge
 
 # Codex
-codex plugin add claude-bingo@lyra-forge
+codex plugin add llm-bingo@lyra-forge
 ```
 
 A bingo board of LLM verbal tics, scored against your own Claude Code
 transcripts. A toy — and our canary for marketplace plumbing: if this one
 installs clean on a fresh machine in either harness, the install path is
 healthy. From Codex it still reads the local Claude Code transcript history.
+
+Formerly `claude-bingo`: Claude Code now reserves plugin names that start with
+`claude-`. If you installed it under the old name, remove that and install
+`llm-bingo`.
 
 ### [yoinker](https://github.com/lavallee/yoinker)
 
