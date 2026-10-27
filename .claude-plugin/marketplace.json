@@ -137,6 +137,25 @@
         "evaluation",
         "claude-code"
       ]
+    },
+    {
+      "name": "toucan",
+      "displayName": "toucan — a canvas you and your agents share",
+      "description": "Reads and changes a live tldraw or Excalidraw canvas through the toucan CLI while a person keeps editing it by hand: inspect, draw, lay out, merge in Mermaid by key, and add canvas scripts.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lavallee/toucan.git",
+        "sha": "9d5e073775fb729bbbabd92d23e67787991a3c5e"
+      },
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "canvas",
+        "diagram",
+        "tldraw",
+        "excalidraw",
+        "mermaid"
+      ]
     }
   ]
 }
