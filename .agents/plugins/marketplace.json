@@ -55,10 +55,10 @@
       "category": "Research"
     },
     {
-      "name": "claude-bingo",
+      "name": "llm-bingo",
       "source": {
         "source": "url",
-        "url": "https://github.com/lavallee/claude-bingo.git"
+        "url": "https://github.com/lavallee/llm-bingo.git"
       },
       "policy": {
         "installation": "AVAILABLE",

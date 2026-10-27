@@ -83,12 +83,12 @@
       ]
     },
     {
-      "name": "claude-bingo",
-      "displayName": "Claude Bingo",
+      "name": "llm-bingo",
+      "displayName": "LLM Bingo",
       "description": "Generate a bingo board of LLM verbal tics and score it against your local Claude Code transcripts.",
       "source": {
         "source": "url",
-        "url": "https://github.com/lavallee/claude-bingo.git"
+        "url": "https://github.com/lavallee/llm-bingo.git"
       },
       "license": "MIT",
       "category": "fun",
