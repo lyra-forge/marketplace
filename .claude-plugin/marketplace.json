@@ -141,7 +141,7 @@
     {
       "name": "toucan",
       "displayName": "toucan — a canvas you and your agents share",
-      "description": "Reads and changes a live tldraw or Excalidraw canvas through the toucan CLI while a person keeps editing it by hand: inspect, draw, lay out, merge in Mermaid by key, and add canvas scripts.",
+      "description": "Reads and changes a live tldraw or Excalidraw canvas through the toucan CLI while a person keeps editing it by hand: inspect, draw, lay out, merge in Mermaid by key, act on sticky notes, propose changes to accept or reject, add canvas scripts, and work headless when no tab is open.",
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/toucan.git",
