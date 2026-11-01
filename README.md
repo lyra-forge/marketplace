@@ -281,7 +281,11 @@ codex plugin add toucan@lyra-forge
 A canvas you and your agents share. toucan runs a tldraw or Excalidraw canvas
 in your browser; the skill teaches your agent to drive it through the `toucan`
 CLI while you keep editing by hand: look before changing, upsert shapes by key,
-merge in a Mermaid sketch, and add canvas scripts for lasting behaviour. The
+merge in a Mermaid sketch, and add canvas scripts for lasting behaviour. Since
+0.2.0 the agent can also act on sticky notes you leave on the canvas, see what you
+have selected, propose changes as dashed shapes you accept or reject, and, with a
+`--headless` server, work while no tab is open, leaving a trail you review later.
+Its edits glow as they land, and one Cmd-Z undoes one agent action. The
 skill needs toucan itself running — see the
 [quick start](https://lavallee.github.io/toucan/quickstart.html).
 
