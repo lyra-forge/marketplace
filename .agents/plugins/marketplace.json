@@ -97,7 +97,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/toucan.git",
-        "sha": "7623bd8b6802710ca53aa21707e22afb22afb8de"
+        "sha": "192d86ace674764e344a24549813b7f271141cad"
       },
       "policy": {
         "installation": "AVAILABLE",
