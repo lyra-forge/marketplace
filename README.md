@@ -278,16 +278,20 @@ the plugin is the same bytes. No service, no credentials; `chip` and
 codex plugin add toucan@lyra-forge
 ```
 
-A canvas you and your agents share. toucan runs a tldraw or Excalidraw canvas
-in your browser; the skill teaches your agent to drive it through the `toucan`
-CLI while you keep editing by hand: look before changing, upsert shapes by key,
-merge in a Mermaid sketch, and add canvas scripts for lasting behaviour. Since
-0.2.0 the agent can also act on sticky notes you leave on the canvas, see what you
-have selected, propose changes as dashed shapes you accept or reject, and, with a
-`--headless` server, work while no tab is open, leaving a trail you review later.
-Its edits glow as they land, and one Cmd-Z undoes one agent action. The
-skill needs toucan itself running — see the
-[quick start](https://lavallee.github.io/toucan/quickstart.html).
+A canvas you and your agents share. Your agent draws diagrams of your code, systems and plans in a browser tab while you
+watch, and reads back what you do there: your edits, the sticky notes you pin where something's wrong, and comments on
+shapes. It starts from 22 templates or describes a diagram as data for the layout engine to place, proposes changes as
+dashed shapes for you to accept or reject, and shows on the canvas what it's working on. The skill teaches the `toucan`
+CLI.
+
+The skill needs toucan itself (Node 22+):
+
+```sh
+curl -fsSL https://github.com/lavallee/toucan/releases/latest/download/install.sh | sh
+```
+
+Then in a project, ask your agent to *use toucan to draw how this repo fits together*. More in the
+[docs](https://lavallee.github.io/toucan/), and for agents, [llms.txt](https://lavallee.github.io/toucan/llms.txt).
 
 ## Adding a plugin to this marketplace
 
