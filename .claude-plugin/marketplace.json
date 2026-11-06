@@ -145,7 +145,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/toucan.git",
-        "sha": "dcb5a21e92c8b8d0b9885512c14ebb9576363676"
+        "sha": "5bd9d8bb6b36d956d1ebff0560b068633a6f3024"
       },
       "license": "MIT",
       "category": "productivity",
