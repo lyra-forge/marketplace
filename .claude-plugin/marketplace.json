@@ -105,7 +105,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/yoinker.git",
-        "sha": "1ba3199185ce1baaec0f32075939b5587618b319"
+        "sha": "bee8517f1f84d53b9d57377bd63c7be22cc70900"
       },
       "license": "MIT",
       "category": "research",
