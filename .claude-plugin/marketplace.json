@@ -105,7 +105,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/yoinker.git",
-        "sha": "52aa055f3545504458d7295feb4d40e81cef5b84"
+        "sha": "1ba3199185ce1baaec0f32075939b5587618b319"
       },
       "license": "MIT",
       "category": "research",
@@ -145,7 +145,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lavallee/toucan.git",
-        "sha": "42fab1aa6dc72834d025df84c87e715942796f05"
+        "sha": "f5f677a03278a567fc1fb8cba4a5f50e7d384466"
       },
       "license": "MIT",
       "category": "productivity",
